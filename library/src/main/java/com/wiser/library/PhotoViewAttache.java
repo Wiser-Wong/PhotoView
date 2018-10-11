@@ -351,8 +351,6 @@ public class PhotoViewAttache implements IPhotoView, View.OnTouchListener, Versi
 
 	public final void onScale(float scaleFactor, float focusX, float focusY) {
 
-		// 缩小判断范围
-		if (getImageView().getWidth() * getScale() < getScreenWidth() - 400 || getImageView().getHeight() * getScale() < getScreenHeight() - 600) return;
 		if (hasDrawable(getImageView()) && (getScale() < mMaxScale || scaleFactor < 1f)) {
 			mSuppMatrix.postScale(scaleFactor, scaleFactor, focusX, focusY);
 			checkAndDisplayMatrix();
